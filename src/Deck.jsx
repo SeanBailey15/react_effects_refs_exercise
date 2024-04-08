@@ -51,11 +51,12 @@ const Deck = () => {
             setRemaining(null);
             setCard(null);
             const res = await axios.get(`https://deckofcardsapi.com/api/deck/${thisDeck.current}/shuffle/`);
-            setDisabled(false);
             setDeckId(res.data.deck_id)
         } catch(err){
             console.error(err);
             alert(`Something went wrong! Refresh and try again.`);            
+        } finally {
+            setDisabled(false);
         }
     }
 
