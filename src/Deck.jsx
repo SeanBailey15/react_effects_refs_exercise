@@ -75,11 +75,6 @@ const Deck = () => {
 
     },[])
 
-    useEffect(() => {
-        console.log(card);
-        console.log(remaining);
-    }, [card]);
-
     if(!deckId){
         return (
             <div className="Deck">
